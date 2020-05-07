@@ -1,15 +1,35 @@
-
 <?php get_header(); ?>
-    <main>
-        <div class="container">
+   
+   <main>
+      <div class="container">
         <div class="result ">
-         <h1><?php single_post_title(); ?></h1>
-         <p>
-           
-         </p>
+         <h1>Resultados de "<?php
+               the_search_query();
+            ?>"</h1>
         </div>
-        </div>
-    </main>
+        <div class="link-list">
+                     <?php
+                      global $post; 
+                      $args = array( 'numberposts' => 20, 's' => $s, 'order' => 'DESC', 'orderby' => 'title' );
+                      $myposts = get_posts( $args );
+                      $h = count($myposts);
+                      if( $h == 0):
+                          echo "<h3>Não resultado há resultados para sua busca</h3>";
+                      else: 
+                     
+                      foreach( $myposts as $post ) : setup_postdata($post); ?>
+                      
+                        <ul>
+                              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                              
+                        </ul>
+                        
+                    <?php endforeach; endif;?> 
+                       
+                </div>
+      </div>
+     
+   </main>
 <?php get_footer(); ?>
 <style>
 

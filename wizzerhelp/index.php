@@ -1,12 +1,5 @@
 <?php get_header(); ?>
-    <div class="search">
-        <div class="wrap">
-            <input type="text" placeholder="Busque termos como 'pagamento'" >
-            <button>
-                <img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/lupa.svg" alt="Wizzer">
-            </button>
-        </div>
-    </div>
+
     <main>
        <div class="container">
             <div class="owner">
@@ -74,16 +67,17 @@
 
 .search .wrap {
   background-color: #fff;
-  padding: 30px;
+  height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
+  padding-left: 30px;
 }
 
 .search .wrap input {
-  width: 710px;
+  width: 460px;
   font-size: 1em;
   color: #353d40;
 }
@@ -94,8 +88,6 @@
   font-weight: 300;
   font-size: 1em;
   line-height: 21px;
-  /* identical to box height */
-
   color: #7c979d;
 }
 
@@ -180,8 +172,5 @@ main .container .owner, .tenant, .regions{
     color: #055EFF;
     text-decoration: none;
 }
-
-
-
 
 </style>
